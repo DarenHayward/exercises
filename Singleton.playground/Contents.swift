@@ -8,8 +8,8 @@ import UIKit
 // A single may be extended in the future. (5)
 
 class Singleton {
-    static let shared = Singleton() // (2) (4)
-    private init() {} // (1) (3)
+    static let shared = Singleton() // (2) (3) (4)
+    private init() {} // (1)
 
     func originalMethod() {
         print("original method")
@@ -30,3 +30,24 @@ extension Singleton {
 }
 
 mySingleton.extendedMethod()
+
+
+// The lowercase singleton, differs in that instances may also be created, this allows for overriding of functions and
+// therefore the modification for other purposes such as testing.
+class LowerCaseSingleton {
+    static let shared = LowerCaseSingleton() // (2) (3) (4)
+    // Note (1) is not applied for a singleton
+    
+    func originalMethod() {
+        print("singleton originalMethod")
+    }
+}
+
+let myLowerCaseSingleton = LowerCaseSingleton.shared
+myLowerCaseSingleton.originalMethod()
+
+let mySecondLowerCaseSingleton = LowerCaseSingleton.shared
+assert(myLowerCaseSingleton === mySecondLowerCaseSingleton)
+
+let myLowerCaseSingletonInstance = LowerCaseSingleton()
+assert(myLowerCaseSingleton !== myLowerCaseSingletonInstance)
