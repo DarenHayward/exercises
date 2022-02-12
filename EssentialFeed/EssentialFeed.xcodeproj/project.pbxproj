@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		950CEB0827B7AA4A00824F94 /* FeedLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950CEB0727B7AA4A00824F94 /* FeedLoader.swift */; };
 		9569B82527B7A800008299CA /* EssentialFeed.docc in Sources */ = {isa = PBXBuildFile; fileRef = 9569B82427B7A800008299CA /* EssentialFeed.docc */; };
 		9569B82B27B7A800008299CA /* EssentialFeed.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9569B82027B7A800008299CA /* EssentialFeed.framework */; };
 		9569B83027B7A800008299CA /* EssentialFeedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9569B82F27B7A800008299CA /* EssentialFeedTests.swift */; };
@@ -25,6 +26,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		950CEB0727B7AA4A00824F94 /* FeedLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedLoader.swift; sourceTree = "<group>"; };
 		9569B82027B7A800008299CA /* EssentialFeed.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EssentialFeed.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9569B82327B7A800008299CA /* EssentialFeed.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EssentialFeed.h; sourceTree = "<group>"; };
 		9569B82427B7A800008299CA /* EssentialFeed.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = EssentialFeed.docc; sourceTree = "<group>"; };
@@ -76,6 +78,7 @@
 				9569B82327B7A800008299CA /* EssentialFeed.h */,
 				9569B82427B7A800008299CA /* EssentialFeed.docc */,
 				9569B83A27B7A884008299CA /* FeedItem.swift */,
+				950CEB0727B7AA4A00824F94 /* FeedLoader.swift */,
 			);
 			path = EssentialFeed;
 			sourceTree = "<group>";
@@ -197,6 +200,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				950CEB0827B7AA4A00824F94 /* FeedLoader.swift in Sources */,
 				9569B83B27B7A884008299CA /* FeedItem.swift in Sources */,
 				9569B82527B7A800008299CA /* EssentialFeed.docc in Sources */,
 			);
