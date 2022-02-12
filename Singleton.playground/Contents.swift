@@ -51,3 +51,28 @@ assert(myLowerCaseSingleton === mySecondLowerCaseSingleton)
 
 let myLowerCaseSingletonInstance = LowerCaseSingleton()
 assert(myLowerCaseSingleton !== myLowerCaseSingletonInstance)
+
+// (5) Using extension
+extension LowerCaseSingleton {
+    func extendedMethod() {
+        print("singleton extendedMethod")
+    }
+}
+myLowerCaseSingleton.extendedMethod()
+
+// Subclassing of LowerCaseSingleton allows overriding for e.g. test code
+class LowerCaseSingletonSubclass : LowerCaseSingleton {
+    override func originalMethod() {
+        print("overriden singleton originalMethod")
+    }
+    
+    func anotherExtendedMethod() {
+        print("subclassed singleton anotherExtendedMethod")
+    }
+}
+
+let myLowerCaseSingletonSubclass = LowerCaseSingletonSubclass()
+myLowerCaseSingletonSubclass.originalMethod()
+myLowerCaseSingletonSubclass.extendedMethod()
+myLowerCaseSingletonSubclass.anotherExtendedMethod()
+
