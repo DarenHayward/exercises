@@ -10,11 +10,10 @@ import EssentialFeed
 
 class EssentialFeedAPIEndToEndTests: XCTestCase {
 
-    func test_endToEndTestServerGETFeeedResult_matchedFixedTestAccountDat() {
+    func test_endToEndTestServerGETFeedResult_matchesFixedTestAccountData() {
         switch getFeedResult() {
-        case let .success(imageFeed):
-            XCTAssertEqual(imageFeed.count, 8, "Expected 8 images in nthe test account image feed")
-            
+        case let .success(imageFeed)?:
+            XCTAssertEqual(imageFeed.count, 8, "Expected 8 images in the test account image feed")
             XCTAssertEqual(imageFeed[0], expectedImage(at: 0))
             XCTAssertEqual(imageFeed[1], expectedImage(at: 1))
             XCTAssertEqual(imageFeed[2], expectedImage(at: 2))
@@ -24,18 +23,18 @@ class EssentialFeedAPIEndToEndTests: XCTestCase {
             XCTAssertEqual(imageFeed[6], expectedImage(at: 6))
             XCTAssertEqual(imageFeed[7], expectedImage(at: 7))
 
-        case let .failure(error):
+        case let .failure(error)?:
             XCTFail("Expected successful feed result, got \(error) instead")
+
         default:
             XCTFail("Expected successful feed result, got no result instead")
         }
-        
     }
     
     // MARK: - Helpers
     
     private func getFeedResult(file: StaticString = #filePath, line: UInt = #line) -> LoadFeedResult? {
-        let testServerURL = URL(string: "http://essentialdeveloper.com/feed-case-study/test-api/feed")!
+        let testServerURL = URL(string: "https://essentialdeveloper.com/feed-case-study/test-api/feed")!
         let client = URLSessionHTTPClient(session: URLSession(configuration: .ephemeral))
         let loader = RemoteFeedLoader(url: testServerURL, client: client)
         trackForMemoryLeaks(client, file: file, line: line)
@@ -58,8 +57,7 @@ class EssentialFeedAPIEndToEndTests: XCTestCase {
             id: id(at: index),
             description: description(at: index),
             location: location(at: index),
-            url: imageURL(at: index)
-        )
+            url: imageURL(at: index))
     }
     
     private func id(at index: Int) -> UUID {
