@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import CloudKit
 
 public struct FeedImage: Equatable {
     public let id: UUID
