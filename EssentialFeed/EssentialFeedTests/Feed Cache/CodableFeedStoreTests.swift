@@ -1,5 +1,5 @@
 //
-//  CodeableFeedStoreTests.swift
+//  CodableFeedStoreTests.swift
 //  EssentialFeedTests
 //
 //  Created by Daren Hayward on 25/02/2022.
@@ -8,7 +8,7 @@
 import XCTest
 import EssentialFeed
 
-class CodeableFeedStore: FeedStore {
+class CodableFeedStore: FeedStore {
     func deleteCachedFeed(completion: @escaping DeletionCompletion) {
 
     }
@@ -22,10 +22,10 @@ class CodeableFeedStore: FeedStore {
     }
 }
 
-class CodeableFeedStoreTests: XCTestCase {
+class CodableFeedStoreTests: XCTestCase {
 
     func test_retrieve_deliversEmptyOnEmptyCache() {
-        let sut = CodeableFeedStore()
+        let sut = CodableFeedStore()
         let exp = expectation(description: "Wait for cache retrieval")
 
         sut.retrieve { result in
@@ -44,7 +44,7 @@ class CodeableFeedStoreTests: XCTestCase {
     }
 
     func test_retrieve_hasNoSideEffectsOnEmptyCache() {
-        let sut = CodeableFeedStore()
+        let sut = CodableFeedStore()
         let exp = expectation(description: "Wait for cache retrieval")
 
         sut.retrieve { firstResult in
