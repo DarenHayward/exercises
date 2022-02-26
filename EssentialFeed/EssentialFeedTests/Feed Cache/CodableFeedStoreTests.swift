@@ -8,7 +8,7 @@
 import XCTest
 import EssentialFeed
 
-class CodableFeedStore {
+class CodableFeedStore: FeedStore {
     private struct Cache: Codable {
         let feed: [CodableFeedImage]
         let timestamp: Date
@@ -66,6 +66,10 @@ class CodableFeedStore {
         } catch {
             completion(error)
         }
+    }
+
+    func deleteCachedFeed(completion: @escaping DeletionCompletion) {
+        completion(nil)
     }
 }
 
@@ -156,6 +160,19 @@ class CodableFeedStoreTests: XCTestCase {
         let insertionError = insert((feed: feed, timestamp: timestamp), to: sut)
 
         XCTAssertNotNil(insertionError, "Expected cache insertion to fail with an error")
+    }
+
+    func test_delete_hasNoSideEffects() {
+        let sut = makeSUT()
+        let exp = expectation(description: "Wait for cache deletion")
+
+
+        sut.deleteCachedFeed(completion: { deletionError in
+            XCTAssertNil(deletionError, "Expected empty deletion cache to succeed")
+            exp.fulfill()
+        })
+
+        wait(for: [exp], timeout: 1.0)
     }
 
     // MARK: - Helpers
