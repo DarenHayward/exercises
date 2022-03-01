@@ -9,6 +9,7 @@ import XCTest
 import EssentialFeed
 
 class CoreDataFeedStoreTests: XCTestCase, FeedStoreSpecs {
+
     func test_retrieve_deliversEmptyOnEmptyCache() {
         let sut = makeSUT()
 
@@ -66,7 +67,7 @@ class CoreDataFeedStoreTests: XCTestCase, FeedStoreSpecs {
     func test_delete_deliversNoErrorOnNonEmptyCache() {
         let sut = makeSUT()
 
-        assertThatDeleteDeliversNoErrorOnEmptyCache(on: sut)
+        assertThatDeleteDeliversNoErrorOnNonEmptyCache(on: sut)
     }
 
     func test_delete_emptiesPreviouslyInsertedCache() {
@@ -81,6 +82,8 @@ class CoreDataFeedStoreTests: XCTestCase, FeedStoreSpecs {
         assertThatSideEffectsRunSerially(on: sut)
     }
 
+    // - MARK: Helpers
+
     private func makeSUT(file: StaticString = #filePath, line: UInt = #line) -> FeedStore {
         let storeBundle = Bundle(for: CoreDataFeedStore.self)
         let storeURL = URL(fileURLWithPath: "/dev/null")
@@ -88,4 +91,5 @@ class CoreDataFeedStoreTests: XCTestCase, FeedStoreSpecs {
         trackForMemoryLeaks(sut, file: file, line: line)
         return sut
     }
+    
 }
