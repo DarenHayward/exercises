@@ -76,8 +76,8 @@ class EssentialFeedCacheIntegrationTests: XCTestCase {
         let exp = expectation(description: "Wait for load completion")
         sut.load { result in
             switch result {
-            case let .success(imageFeed):
-                XCTAssertEqual(imageFeed, expectedFeed, file: file, line: line)
+            case let .success(loadedFeed):
+                XCTAssertEqual(loadedFeed, expectedFeed, file: file, line: line)
 
             case let .failure(error):
                 XCTFail("Expected successful feed result, got \(error) instead", file: file, line: line)
@@ -107,4 +107,5 @@ class EssentialFeedCacheIntegrationTests: XCTestCase {
     private func cachesDirectory() -> URL {
         return FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).first!
     }
+
 }
