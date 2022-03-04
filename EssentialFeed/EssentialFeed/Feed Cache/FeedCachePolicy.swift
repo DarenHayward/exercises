@@ -23,4 +23,3 @@ import Foundation
         return date < maxCacheAge
     }
 }
-
