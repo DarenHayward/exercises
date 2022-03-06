@@ -25,7 +25,7 @@
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="FeedImageCell" rowHeight="580" id="OqN-MP-SAg">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="FeedImageCell" rowHeight="580" id="OqN-MP-SAg" customClass="FeedImageCell" customModule="Prototype" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="60.5" width="414" height="580"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="OqN-MP-SAg" id="DWB-zI-9Dx">
@@ -107,6 +107,12 @@ Location</string>
                                         <constraint firstItem="d1C-04-Oj7" firstAttribute="top" secondItem="DWB-zI-9Dx" secondAttribute="topMargin" priority="999" constant="6" id="mwN-4z-Gs7"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="descriptionLabel" destination="SY4-ip-fgM" id="1a7-GR-WRB"/>
+                                    <outlet property="feedImageView" destination="zf1-oK-aHk" id="xUx-TE-TCt"/>
+                                    <outlet property="locationContainer" destination="7Ty-Oi-W0E" id="Ilu-7y-n2y"/>
+                                    <outlet property="locationLabel" destination="GKM-SU-FfV" id="63n-jZ-CZm"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
