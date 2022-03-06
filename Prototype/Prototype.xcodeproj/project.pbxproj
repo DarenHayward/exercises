@@ -13,8 +13,8 @@
 		9581B04927D497CA009EBE95 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9581B04827D497CA009EBE95 /* Assets.xcassets */; };
 		9581B04C27D497CA009EBE95 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9581B04A27D497CA009EBE95 /* LaunchScreen.storyboard */; };
 		9581B05427D4A975009EBE95 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9581B05327D4A975009EBE95 /* FeedViewController.swift */; };
-		9581B05C27D4BA44009EBE95 /* FeedImageViewModel+PrototypeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9581B05B27D4BA44009EBE95 /* FeedImageViewModel+PrototypeData.swift */; };
 		9581B05827D4B689009EBE95 /* FeedImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9581B05727D4B689009EBE95 /* FeedImageCell.swift */; };
+		9581B05C27D4BA44009EBE95 /* FeedImageViewModel+PrototypeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9581B05B27D4BA44009EBE95 /* FeedImageViewModel+PrototypeData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,8 +26,8 @@
 		9581B04B27D497CA009EBE95 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9581B04D27D497CA009EBE95 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9581B05327D4A975009EBE95 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
-		9581B05B27D4BA44009EBE95 /* FeedImageViewModel+PrototypeData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FeedImageViewModel+PrototypeData.swift"; sourceTree = "<group>"; };
 		9581B05727D4B689009EBE95 /* FeedImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedImageCell.swift; sourceTree = "<group>"; };
+		9581B05B27D4BA44009EBE95 /* FeedImageViewModel+PrototypeData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FeedImageViewModel+PrototypeData.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,14 +61,14 @@
 			isa = PBXGroup;
 			children = (
 				9581B03F27D497C9009EBE95 /* AppDelegate.swift */,
-				9581B04127D497C9009EBE95 /* SceneDelegate.swift */,
-				9581B04527D497C9009EBE95 /* Main.storyboard */,
 				9581B04827D497CA009EBE95 /* Assets.xcassets */,
-				9581B04A27D497CA009EBE95 /* LaunchScreen.storyboard */,
-				9581B04D27D497CA009EBE95 /* Info.plist */,
-				9581B05327D4A975009EBE95 /* FeedViewController.swift */,
-				9581B05B27D4BA44009EBE95 /* FeedImageViewModel+PrototypeData.swift */,
 				9581B05727D4B689009EBE95 /* FeedImageCell.swift */,
+				9581B05B27D4BA44009EBE95 /* FeedImageViewModel+PrototypeData.swift */,
+				9581B05327D4A975009EBE95 /* FeedViewController.swift */,
+				9581B04D27D497CA009EBE95 /* Info.plist */,
+				9581B04A27D497CA009EBE95 /* LaunchScreen.storyboard */,
+				9581B04527D497C9009EBE95 /* Main.storyboard */,
+				9581B04127D497C9009EBE95 /* SceneDelegate.swift */,
 			);
 			path = Prototype;
 			sourceTree = "<group>";
