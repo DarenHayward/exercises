@@ -124,6 +124,7 @@ Location</string>
                         <connections>
                             <outlet property="dataSource" destination="vnS-Hf-BfU" id="yCP-gq-JFf"/>
                             <outlet property="delegate" destination="vnS-Hf-BfU" id="dcU-k2-tcm"/>
+                            <outlet property="prefetchDataSource" destination="vnS-Hf-BfU" id="Rzm-xa-frS"/>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="My Feed" id="iRO-qE-cfe"/>
