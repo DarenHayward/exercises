@@ -84,7 +84,7 @@ class FeedImagePresenterTests: XCTestCase {
     }
 
     func test_didFinishLoadingImageData_displaysRetryOnFailedImageTransformation() {
-        let (sut, view) = makeSUT()
+        let (sut, view) = makeSUT(imageTransformer: alwaysFailsTransformer)
         let image = uniqueImage()
         let data = Data()
 
@@ -137,6 +137,10 @@ class FeedImagePresenterTests: XCTestCase {
         XCTAssertEqual(message?.isLoading, isLoading, file: file, line: line)
         XCTAssertEqual(message?.shouldRetry, shouldRetry, file: file, line: line)
 
+    }
+
+    private var alwaysFailsTransformer: (Data) -> AnyImage? {
+        return { _ in nil }
     }
 
     private struct AnyImage: Equatable {}
