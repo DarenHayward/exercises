@@ -76,10 +76,10 @@ final class FeedImagePresenter<View: FeedImageView, Image> where View.Image == I
 
 class FeedImagePresenterTests: XCTestCase {
 
-    func test_init_doesNotSendImagesToView() {
+    func test_init_doesNotSendMessagesToView() {
         let (_, view) = makeSUT()
 
-        XCTAssertTrue(view.messages.isEmpty, "Expected no view images")
+        XCTAssertTrue(view.messages.isEmpty, "Expected no view messages")
     }
 
     func test_didStartLoadingImageData_displaysLoadingImage() {
