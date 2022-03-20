@@ -113,7 +113,7 @@ class FeedImagePresenterTests: XCTestCase {
 
     }
 
-    func test_didFinishLoadingImageData_displaysRetry() {
+    func test_didFinishLoadingImageDataWithError_displaysRetry() {
         let (sut, view) = makeSUT()
         let image = uniqueImage()
 
