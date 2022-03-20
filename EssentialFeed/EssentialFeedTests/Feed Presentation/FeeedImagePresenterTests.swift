@@ -88,7 +88,7 @@ class FeedImagePresenterTests: XCTestCase {
 
         sut.didStartLoadingFeed(for: image)
 
-        expect(for: view, with: image, hasImage: .none, isLoading: true, shouldRetry: false)
+        expect(for: view, with: image, hasTransformatedData: .none, isLoading: true, shouldRetry: false)
 
     }
 
@@ -99,7 +99,7 @@ class FeedImagePresenterTests: XCTestCase {
 
         sut.didFinishLoadingImageData(with: data, for: image)
 
-        expect(for: view, with: image, hasImage: .none, isLoading: false, shouldRetry: true)
+        expect(for: view, with: image, hasTransformatedData: .none, isLoading: false, shouldRetry: true)
 
     }
 
@@ -111,7 +111,7 @@ class FeedImagePresenterTests: XCTestCase {
 
         sut.didFinishLoadingImageData(with: data, for: image)
 
-        expect(for: view, with: image, hasImage: transformedData, isLoading: false, shouldRetry: false)
+        expect(for: view, with: image, hasTransformatedData: transformedData, isLoading: false, shouldRetry: false)
 
     }
 
@@ -121,7 +121,7 @@ class FeedImagePresenterTests: XCTestCase {
 
         sut.didFinishLoadingImageData(with: anyNSError(), for: image)
 
-        expect(for: view, with: image, hasImage: .none, isLoading: false, shouldRetry: true)
+        expect(for: view, with: image, hasTransformatedData: .none, isLoading: false, shouldRetry: true)
     }
 
     // MARK: - Helpers
@@ -141,7 +141,7 @@ class FeedImagePresenterTests: XCTestCase {
     private func expect(
         for view: ViewSpy,
         with image: FeedImage,
-        hasImage: AnyImage?,
+        hasTransformatedData: AnyImage?,
         isLoading: Bool,
         shouldRetry: Bool,
         file: StaticString = #filePath,
@@ -151,7 +151,7 @@ class FeedImagePresenterTests: XCTestCase {
         let message = view.messages.first
         XCTAssertEqual(message?.description, image.description, file: file, line: line)
         XCTAssertEqual(message?.location, image.location, file: file, line: line)
-        XCTAssertEqual(message?.image, hasImage, file: file, line: line)
+        XCTAssertEqual(message?.image, hasTransformatedData, file: file, line: line)
         XCTAssertEqual(message?.isLoading, isLoading, file: file, line: line)
         XCTAssertEqual(message?.shouldRetry, shouldRetry, file: file, line: line)
 
