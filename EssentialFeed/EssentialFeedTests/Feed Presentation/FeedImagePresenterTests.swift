@@ -47,21 +47,13 @@ final class FeedImagePresenter<View: FeedImageView, Image> where View.Image == I
     }
 
     func didFinishLoadingImageData(with data: Data, for model: FeedImage) {
-        guard let image = imageTransformer(data) else {
-            return view.display(FeedImageViewModel(
-                description: model.description,
-                location: model.location,
-                image: nil,
-                isLoading: false,
-                shouldRetry: true))
-        }
-
+        let image = imageTransformer(data)
         view.display(FeedImageViewModel(
             description: model.description,
             location: model.location,
             image: image,
             isLoading: false,
-            shouldRetry: false))
+            shouldRetry: image == nil))
     }
 
     func didFinishLoadingImageData(with error: Error, for model: FeedImage) {
