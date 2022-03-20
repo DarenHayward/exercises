@@ -79,13 +79,7 @@ class FeedImagePresenterTests: XCTestCase {
 
         sut.didStartLoadingFeed(for: image)
 
-        XCTAssertEqual(view.messages.count, 1)
-        let message = view.messages.first
-        XCTAssertEqual(message?.description, image.description)
-        XCTAssertEqual(message?.location, image.location)
-        XCTAssertNil(message?.image)
-        XCTAssertEqual(message?.isLoading, true)
-        XCTAssertEqual(message?.shouldRetry, false)
+        expect(for: view, with: image, hasImage: .none, isLoading: true, shouldRetry: false)
 
     }
 
@@ -96,13 +90,7 @@ class FeedImagePresenterTests: XCTestCase {
 
         sut.didFinishLoadingImageData(with: data, for: image)
 
-        XCTAssertEqual(view.messages.count, 1)
-        let message = view.messages.first
-        XCTAssertEqual(message?.description, image.description)
-        XCTAssertEqual(message?.location, image.location)
-        XCTAssertNil(message?.image)
-        XCTAssertEqual(message?.isLoading, false)
-        XCTAssertEqual(message?.shouldRetry, true)
+        expect(for: view, with: image, hasImage: .none, isLoading: false, shouldRetry: true)
 
     }
 
@@ -114,13 +102,7 @@ class FeedImagePresenterTests: XCTestCase {
 
         sut.didFinishLoadingImageData(with: data, for: image)
 
-        XCTAssertEqual(view.messages.count, 1)
-        let message = view.messages.first
-        XCTAssertEqual(message?.description, image.description)
-        XCTAssertEqual(message?.location, image.location)
-        XCTAssertEqual(message?.image, transformedData)
-        XCTAssertEqual(message?.isLoading, false)
-        XCTAssertEqual(message?.shouldRetry, false)
+        expect(for: view, with: image, hasImage: transformedData, isLoading: false, shouldRetry: false)
 
     }
 
@@ -136,6 +118,25 @@ class FeedImagePresenterTests: XCTestCase {
         trackForMemoryLeaks(view)
         trackForMemoryLeaks(sut)
         return (sut, view)
+    }
+
+    private func expect(
+        for view: ViewSpy,
+        with image: FeedImage,
+        hasImage: AnyImage?,
+        isLoading: Bool,
+        shouldRetry: Bool,
+        file: StaticString = #filePath,
+        line: UInt = #line
+    ) {
+        XCTAssertEqual(view.messages.count, 1, file: file, line: line)
+        let message = view.messages.first
+        XCTAssertEqual(message?.description, image.description, file: file, line: line)
+        XCTAssertEqual(message?.location, image.location, file: file, line: line)
+        XCTAssertEqual(message?.image, hasImage, file: file, line: line)
+        XCTAssertEqual(message?.isLoading, isLoading, file: file, line: line)
+        XCTAssertEqual(message?.shouldRetry, shouldRetry, file: file, line: line)
+
     }
 
     private struct AnyImage: Equatable {}
