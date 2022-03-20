@@ -37,7 +37,7 @@ final class FeedImagePresenter<View: FeedImageView, Image> where View.Image == I
 
     }
 
-    public func didStartLoadingFeed(for model: FeedImage) {
+    func didStartLoadingImageData(for model: FeedImage) {
         view.display(FeedImageViewModel(
             description: model.description,
             location: model.location,
@@ -86,7 +86,7 @@ class FeedImagePresenterTests: XCTestCase {
         let (sut, view) = makeSUT()
         let image = uniqueImage()
 
-        sut.didStartLoadingFeed(for: image)
+        sut.didStartLoadingImageData(for: image)
 
         expect(for: view, with: image, hasTransformatedData: .none, isLoading: true, shouldRetry: false)
 
