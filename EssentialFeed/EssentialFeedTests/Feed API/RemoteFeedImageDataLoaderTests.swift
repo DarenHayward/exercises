@@ -28,18 +28,18 @@ class RemoteFeedImageDataLoader {
     }
 
     @discardableResult
-    func loadImageData(from url: URL, completion: @escaping(FeedImageDataLoader.Result) -> Void) -> FeedImageDataLoaderTask {
-        HTTPTaskWrapper(wrapped: client.get(from: url) { [weak self] result in
+    func loadImageData(from url: URL, completion: @escaping (FeedImageDataLoader.Result) -> Void) -> FeedImageDataLoaderTask {
+        return HTTPTaskWrapper(wrapped: client.get(from: url) { [weak self] result in
             guard self != nil else { return }
+
             switch result {
             case let .success((data, response)):
-                if response.statusCode == 200 && !data.isEmpty {
+                if response.statusCode == 200, !data.isEmpty {
                     completion(.success(data))
                 } else {
                     completion(.failure(Error.invalidData))
                 }
-            case let .failure(error):
-                completion(.failure(error))
+            case let .failure(error): completion(.failure(error))
             }
         })
     }
@@ -83,6 +83,7 @@ class RemoteFeedImageDataLoaderTests: XCTestCase {
 
     func test_loadImageDataFromURL_deliversInvalidDataErrorOnNon200HTTPResponse() {
         let (sut, client) = makeSUT()
+
         let samples = [199, 201, 300, 400, 500]
 
         samples.enumerated().forEach { index, code in
@@ -105,12 +106,12 @@ class RemoteFeedImageDataLoaderTests: XCTestCase {
         let (sut, client) = makeSUT()
         let nonEmptyData = Data("non-empty data".utf8)
 
-        expect(sut, toCompleteWith: .success(nonEmptyData)) {
+        expect(sut, toCompleteWith: .success(nonEmptyData), when: {
             client.complete(withStatusCode: 200, data: nonEmptyData)
-        }
+        })
     }
 
-    func test_cancelLoadImageDataTask_cancelsClientURLRequest() {
+    func test_cancelLoadImageDataURLTask_cancelsClientURLRequest() {
         let (sut, client) = makeSUT()
         let url = URL(string: "https://a-given-url.com")!
 
@@ -121,12 +122,12 @@ class RemoteFeedImageDataLoaderTests: XCTestCase {
         XCTAssertEqual(client.cancelledURLs, [url], "Expected cancelled URL request after task is cancelled")
     }
 
-    func test_loadImageDataFromURL_doesNotDeliverDataAfterInstanceHasBeenDeallocated() {
+    func test_loadImageDataFromURL_doesNotDeliverResultAfterSUTInstanceHasBeenDeallocated() {
         let client = HTTPClientSpy()
         var sut: RemoteFeedImageDataLoader? = RemoteFeedImageDataLoader(client: client)
 
         var capturedResults = [FeedImageDataLoader.Result]()
-        sut?.loadImageData(from: anyURL(), completion: { capturedResults.append($0) })
+        sut?.loadImageData(from: anyURL()) { capturedResults.append($0) }
 
         sut = nil
         client.complete(withStatusCode: 200, data: anyData())
@@ -160,10 +161,13 @@ class RemoteFeedImageDataLoaderTests: XCTestCase {
             switch (receivedResult, expectedResult) {
             case let (.success(receivedData), .success(expectedData)):
                 XCTAssertEqual(receivedData, expectedData, file: file, line: line)
+
             case let (.failure(receivedError as RemoteFeedImageDataLoader.Error), .failure(expectedError as RemoteFeedImageDataLoader.Error)):
-                XCTAssertEqual(expectedError, receivedError, file: file, line: line)
+                XCTAssertEqual(receivedError, expectedError, file: file, line: line)
+
             case let (.failure(receivedError as NSError), .failure(expectedError as NSError)):
-                XCTAssertEqual(expectedError, receivedError, file: file, line: line)
+                XCTAssertEqual(receivedError, expectedError, file: file, line: line)
+
              default:
                 XCTFail("Expected result \(expectedResult) got \(receivedResult) instead", file: file, line: line)
             }
@@ -182,7 +186,7 @@ class RemoteFeedImageDataLoaderTests: XCTestCase {
             func cancel() { callback() }
         }
 
-        var messages = [(url: URL, completion: (HTTPClient.Result) -> Void)]()
+        private var messages = [(url: URL, completion: (HTTPClient.Result) -> Void)]()
         private(set) var cancelledURLs = [URL]()
 
         var requestedURLs: [URL] {
