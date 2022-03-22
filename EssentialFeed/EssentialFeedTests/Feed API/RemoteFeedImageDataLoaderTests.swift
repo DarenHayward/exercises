@@ -23,10 +23,12 @@ class RemoteFeedImageDataLoader {
         client.get(from: url) { [weak self] result in
             guard self != nil else { return }
             switch result {
-            case let .success((data, response)) where response.statusCode == 200 && !data.isEmpty:
-                completion(.success(data))
-            case .success:
-                completion(.failure(Error.invalidData))
+            case let .success((data, response)):
+                if response.statusCode == 200 && !data.isEmpty {
+                    completion(.success(data))
+                } else {
+                    completion(.failure(Error.invalidData))
+                }
             case let .failure(error):
                 completion(.failure(error))
             }
