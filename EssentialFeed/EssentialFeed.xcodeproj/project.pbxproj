@@ -98,6 +98,7 @@
 		95DE2A7E27C4FA7E0076DAE7 /* FeedStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DE2A7D27C4FA7E0076DAE7 /* FeedStore.swift */; };
 		95FEC79C27F03324001BCC40 /* LocalFeedImageDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FEC79B27F03324001BCC40 /* LocalFeedImageDataLoader.swift */; };
 		95FEC79E27F03378001BCC40 /* FeedImageDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FEC79D27F03378001BCC40 /* FeedImageDataStore.swift */; };
+		95FEC7A027F04166001BCC40 /* FeedImageDataStoreSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FEC79F27F04166001BCC40 /* FeedImageDataStoreSpy.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -241,6 +242,7 @@
 		95DE2A7D27C4FA7E0076DAE7 /* FeedStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedStore.swift; sourceTree = "<group>"; };
 		95FEC79B27F03324001BCC40 /* LocalFeedImageDataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalFeedImageDataLoader.swift; sourceTree = "<group>"; };
 		95FEC79D27F03378001BCC40 /* FeedImageDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedImageDataStore.swift; sourceTree = "<group>"; };
+		95FEC79F27F04166001BCC40 /* FeedImageDataStoreSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedImageDataStoreSpy.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -507,6 +509,7 @@
 			isa = PBXGroup;
 			children = (
 				957B81AB27C6BABE00DE606F /* FeedStoreSpy.swift */,
+				95FEC79F27F04166001BCC40 /* FeedImageDataStoreSpy.swift */,
 				95D2221E27C79F2000133DC4 /* FeedCacheTestHelpers.swift */,
 			);
 			path = Helpers;
@@ -918,6 +921,7 @@
 				957CCFAD27E705F6007F6B9C /* FeedImagePresenterTests.swift in Sources */,
 				95D2222127C7A06500133DC4 /* SharedTestHelpers.swift in Sources */,
 				95DE2A7927C4121C0076DAE7 /* CacheFeedUseCaseTests.swift in Sources */,
+				95FEC7A027F04166001BCC40 /* FeedImageDataStoreSpy.swift in Sources */,
 				958BD88F27CB9AB000F8C3C3 /* XCTestCase+FailableDeleteFeedStoreSpecs.swift in Sources */,
 				958BD88B27CB959B00F8C3C3 /* XCTestCase+FailableRetrieveFeedStoreSpecs.swift in Sources */,
 				957B81A927C6B5B100DE606F /* LoadFeedFromCacheUseCaseTests.swift in Sources */,
