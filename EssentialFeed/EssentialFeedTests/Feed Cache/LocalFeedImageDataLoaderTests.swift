@@ -103,7 +103,7 @@ class LocalFeedImageDataLoaderTests: XCTestCase {
                 .failure(expectedError as LocalFeedImageDataLoader.Error)):
                 XCTAssertEqual(receivedError, expectedError, file: file, line: line)
             default:
-                XCTFail("")
+                XCTFail("Expected result \(expectedResult), got \(receivedResult) instead", file: file, line: line)
             }
             exp.fulfill()
         }
