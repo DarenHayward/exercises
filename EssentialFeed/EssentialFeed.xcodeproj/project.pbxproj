@@ -328,11 +328,11 @@
 			children = (
 				95B1ECAE27CCBEE100333FC0 /* CoreDataFeedStore.swift */,
 				9567416827F6EC6E00B1CE02 /* CoreDataFeedStore+FeedStore.swift */,
+				9567416627F6D96800B1CE02 /* CoreDataFeedStore+FeedImageDataLoader.swift */,
 				95B1ECB027CCC21C00333FC0 /* FeedStore.xcdatamodeld */,
 				954A767F27CDE55E00488D4A /* CoreDataHelpers.swift */,
 				954A768127CDE68300488D4A /* ManagedCache.swift */,
 				954A768327CDE6B500488D4A /* ManagedFeedImage.swift */,
-				9567416627F6D96800B1CE02 /* CoreDataFeedStore+FeedImageDataLoader.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
