@@ -130,7 +130,7 @@ Given the customer doesn't have connectivity
 1. System does not deliver image data nor error.
 
 #### Retrieval error course (sad path):
-1. System delivers error.
+1. System delivers not found error.
 
 #### Empty cache course (sad path):
 1. System delivers no image data.
