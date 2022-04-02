@@ -453,12 +453,12 @@
 		9569B82227B7A800008299CA /* EssentialFeed */ = {
 			isa = PBXGroup;
 			children = (
-				95DE2A7A27C4FA050076DAE7 /* Feed Cache */,
+				950CEB0C27B7ABD200824F94 /* Feed Feature */,
 				9570BAB627B8FC9900D9AA92 /* Feed API */,
+				95DE2A7A27C4FA050076DAE7 /* Feed Cache */,
 				9598238527E636B40001FA34 /* Feed Presentation */,
 				9569B82327B7A800008299CA /* EssentialFeed.h */,
 				9569B82427B7A800008299CA /* EssentialFeed.docc */,
-				950CEB0C27B7ABD200824F94 /* Feed Feature */,
 			);
 			path = EssentialFeed;
 			sourceTree = "<group>";
