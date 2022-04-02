@@ -92,6 +92,15 @@ class ValidateFeedCacheUseCaseTests: XCTestCase {
         })
     }
 
+    func test_validateCache_succeedsOnSuccessfulDeletionOfFailedRetrieval() {
+        let (sut, store) = makeSUT()
+
+        expect(sut, toCompleteWith: .success(()), when: {
+            store.completeRetrieval(with: anyNSError())
+            store.completeDeletionSuccessfully()
+        })
+    }
+
     // MARK: - Helpers
 
     private func makeSUT(
