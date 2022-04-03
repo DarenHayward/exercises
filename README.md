@@ -1,6 +1,6 @@
 # Essential Feed App – Image Feed Feature
 
-[![Build Status](https://app.travis-ci.com/DarenHayward/exercises.svg?branch=main)](https://app.travis-ci.com/DarenHayward/exercises)
+[![Build Status](https://travis-ci.com/essentialdevelopercom/essential-feed-case-study.svg?branch=master)](https://travis-ci.com/essentialdevelopercom/essential-feed-case-study)
 
 ## BDD Specs
 
@@ -130,10 +130,10 @@ Given the customer doesn't have connectivity
 1. System does not deliver image data nor error.
 
 #### Retrieval error course (sad path):
-1. System delivers not found error.
+1. System delivers error.
 
 #### Empty cache course (sad path):
-1. System delivers no image data.
+1. System delivers not found error.
 
 ---
 
@@ -167,6 +167,21 @@ Given the customer doesn't have connectivity
 
 #### Deleting error course (sad path):
 1. System delivers error.
+
+#### Saving error course (sad path):
+1. System delivers error.
+
+---
+
+### Cache Feed Image Data Use Case
+
+#### Data:
+- Image Data
+
+#### Primary course (happy path):
+1. Execute "Save Image Data" command with above data.
+2. System caches image data.
+3. System delivers success message.
 
 #### Saving error course (sad path):
 1. System delivers error.
