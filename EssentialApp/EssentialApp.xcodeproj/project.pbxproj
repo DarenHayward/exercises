@@ -16,7 +16,7 @@
 		9593F90027FC0D4100549054 /* FeedLoaderStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9593F8FF27FC0D4100549054 /* FeedLoaderStub.swift */; };
 		9593F90427FC0E0200549054 /* XCTestCase+FeedLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9593F90327FC0E0200549054 /* XCTestCase+FeedLoader.swift */; };
 		9593F90827FC161500549054 /* FeedLoaderCacheDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9593F90727FC161500549054 /* FeedLoaderCacheDecorator.swift */; };
-		9593F90A27FC173A00549054 /* FeedImageDataLoaderDecoratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9593F90927FC173A00549054 /* FeedImageDataLoaderDecoratorTests.swift */; };
+		9593F90A27FC173A00549054 /* FeedImageDataLoaderCacheDecoratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9593F90927FC173A00549054 /* FeedImageDataLoaderCacheDecoratorTests.swift */; };
 		9593F90C27FC208800549054 /* FeedImageDataLoaderSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9593F90B27FC208800549054 /* FeedImageDataLoaderSpy.swift */; };
 		9593F90E27FC21F700549054 /* XCTestCase+FeedImageDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9593F90D27FC21F700549054 /* XCTestCase+FeedImageDataLoader.swift */; };
 		95DB655B27F96E4E0048EF30 /* EssentialFeed.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95DB655927F96E4E0048EF30 /* EssentialFeed.framework */; };
@@ -69,7 +69,7 @@
 		9593F8FF27FC0D4100549054 /* FeedLoaderStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedLoaderStub.swift; sourceTree = "<group>"; };
 		9593F90327FC0E0200549054 /* XCTestCase+FeedLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+FeedLoader.swift"; sourceTree = "<group>"; };
 		9593F90727FC161500549054 /* FeedLoaderCacheDecorator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedLoaderCacheDecorator.swift; sourceTree = "<group>"; };
-		9593F90927FC173A00549054 /* FeedImageDataLoaderDecoratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedImageDataLoaderDecoratorTests.swift; sourceTree = "<group>"; };
+		9593F90927FC173A00549054 /* FeedImageDataLoaderCacheDecoratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedImageDataLoaderCacheDecoratorTests.swift; sourceTree = "<group>"; };
 		9593F90B27FC208800549054 /* FeedImageDataLoaderSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedImageDataLoaderSpy.swift; sourceTree = "<group>"; };
 		9593F90D27FC21F700549054 /* XCTestCase+FeedImageDataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+FeedImageDataLoader.swift"; sourceTree = "<group>"; };
 		95DB655927F96E4E0048EF30 /* EssentialFeed.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = EssentialFeed.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -144,7 +144,7 @@
 				95DB656227F974DC0048EF30 /* FeedLoaderWithFallbackCompositeTests.swift */,
 				95DB656627F9F51F0048EF30 /* FeedImageDataLoaderWithFallbackCompositeTests.swift */,
 				9593F8FD27FC0A9700549054 /* FeedLoaderCacheDecoratorTests.swift */,
-				9593F90927FC173A00549054 /* FeedImageDataLoaderDecoratorTests.swift */,
+				9593F90927FC173A00549054 /* FeedImageDataLoaderCacheDecoratorTests.swift */,
 			);
 			path = EssentialAppTests;
 			sourceTree = "<group>";
@@ -287,7 +287,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				95DB656E27FA0D4E0048EF30 /* SharedTestHelpers.swift in Sources */,
-				9593F90A27FC173A00549054 /* FeedImageDataLoaderDecoratorTests.swift in Sources */,
+				9593F90A27FC173A00549054 /* FeedImageDataLoaderCacheDecoratorTests.swift in Sources */,
 				95DB656727F9F51F0048EF30 /* FeedImageDataLoaderWithFallbackCompositeTests.swift in Sources */,
 				9593F90427FC0E0200549054 /* XCTestCase+FeedLoader.swift in Sources */,
 				95DB656327F974DC0048EF30 /* FeedLoaderWithFallbackCompositeTests.swift in Sources */,

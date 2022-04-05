@@ -8,7 +8,7 @@
 import XCTest
 import EssentialFeed
 
-class FeedImageDataLoaderDecorator: FeedImageDataLoader {
+class FeedImageDataLoaderCacheDecorator: FeedImageDataLoader {
     private let decoratee: FeedImageDataLoader
     private let cache: FeedImageDataCache
 
@@ -27,7 +27,7 @@ class FeedImageDataLoaderDecorator: FeedImageDataLoader {
     }
 }
 
-class FeedImageDataLoaderDecoratorTests: XCTestCase, FeedImageDataLoaderTestCase {
+class FeedImageDataLoaderCacheDecoratorTests: XCTestCase, FeedImageDataLoaderTestCase {
 
     func test_init_doesNotLoadImageData() {
         let (_, loader) = makeSUT()
@@ -98,7 +98,7 @@ class FeedImageDataLoaderDecoratorTests: XCTestCase, FeedImageDataLoaderTestCase
 
     private func makeSUT(cache: CacheSpy = .init(), file: StaticString = #filePath, line: UInt = #line) -> (sut: FeedImageDataLoader, loader: FeedImageDataLoaderSpy) {
         let loader = FeedImageDataLoaderSpy()
-        let sut = FeedImageDataLoaderDecorator(decoratee: loader, cache: cache)
+        let sut = FeedImageDataLoaderCacheDecorator(decoratee: loader, cache: cache)
         trackForMemoryLeaks(loader, file: file, line: line)
         trackForMemoryLeaks(sut, file: file, line: line)
         return (sut, loader)
