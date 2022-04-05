@@ -73,8 +73,4 @@ class FeedImageDataLoaderDecoratorTests: XCTestCase, FeedImageDataLoaderTestCase
         trackForMemoryLeaks(sut, file: file, line: line)
         return (sut, loader)
     }
-
-    private func anyData() -> Data {
-        return Data("any data".utf8)
-    }
 }

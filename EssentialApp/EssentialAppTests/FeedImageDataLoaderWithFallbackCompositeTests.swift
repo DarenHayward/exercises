@@ -102,8 +102,4 @@ class FeedImageDataLoaderWithFallbackCompositeTests: XCTestCase, FeedImageDataLo
         trackForMemoryLeaks(sut, file: file, line: line)
         return (sut, primaryLoader, fallbackLoader)
     }
-
-    private func anyData() -> Data {
-        return Data("any data".utf8)
-    }
 }
