@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		956594D828000FB2005FA688 /* HTTPClientStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956594D728000FB2005FA688 /* HTTPClientStub.swift */; };
+		956594DA28001082005FA688 /* InMemoryFeedStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956594D928001082005FA688 /* InMemoryFeedStore.swift */; };
 		9572F59E27FEB75100239F9F /* SceneDelegateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9572F59D27FEB75100239F9F /* SceneDelegateTests.swift */; };
 		9572F5A527FEBB8200239F9F /* WeakRefVirtualProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9572F5A227FEBB8100239F9F /* WeakRefVirtualProxy.swift */; };
 		9572F5A627FEBB8200239F9F /* FeedViewAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9572F5A127FEBB8100239F9F /* FeedViewAdapter.swift */; };
@@ -78,6 +79,7 @@
 
 /* Begin PBXFileReference section */
 		956594D728000FB2005FA688 /* HTTPClientStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClientStub.swift; sourceTree = "<group>"; };
+		956594D928001082005FA688 /* InMemoryFeedStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InMemoryFeedStore.swift; sourceTree = "<group>"; };
 		9572F59D27FEB75100239F9F /* SceneDelegateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegateTests.swift; sourceTree = "<group>"; };
 		9572F59F27FEBB8100239F9F /* FeedImageDataLoaderPresentationAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedImageDataLoaderPresentationAdapter.swift; sourceTree = "<group>"; };
 		9572F5A027FEBB8100239F9F /* FeedUIComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedUIComposer.swift; sourceTree = "<group>"; };
@@ -227,6 +229,7 @@
 				9593F90327FC0E0200549054 /* XCTestCase+FeedLoader.swift */,
 				95DB656B27FA0CC10048EF30 /* XCTestCase+MemoryLeakTracking.swift */,
 				9593F90D27FC21F700549054 /* XCTestCase+FeedImageDataLoader.swift */,
+				956594D928001082005FA688 /* InMemoryFeedStore.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -364,6 +367,7 @@
 				9572F59E27FEB75100239F9F /* SceneDelegateTests.swift in Sources */,
 				9572F5B927FEBCC700239F9F /* FeedViewControllerTests+Assertions.swift in Sources */,
 				95DB656327F974DC0048EF30 /* FeedLoaderWithFallbackCompositeTests.swift in Sources */,
+				956594DA28001082005FA688 /* InMemoryFeedStore.swift in Sources */,
 				9572F5B627FEBCC700239F9F /* FeedViewControllerTests+Localization.swift in Sources */,
 				9572F5B727FEBCC700239F9F /* UIImage+TestHelpers.swift in Sources */,
 				9593F8FE27FC0A9700549054 /* FeedLoaderCacheDecoratorTests.swift in Sources */,
