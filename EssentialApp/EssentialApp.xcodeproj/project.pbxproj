@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9572F59C27FEAC0C00239F9F /* DebuggingSceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9572F59B27FEAC0C00239F9F /* DebuggingSceneDelegate.swift */; };
 		9572F59E27FEB75100239F9F /* SceneDelegateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9572F59D27FEB75100239F9F /* SceneDelegateTests.swift */; };
 		9572F5A527FEBB8200239F9F /* WeakRefVirtualProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9572F5A227FEBB8100239F9F /* WeakRefVirtualProxy.swift */; };
 		9572F5A627FEBB8200239F9F /* FeedViewAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9572F5A127FEBB8100239F9F /* FeedViewAdapter.swift */; };
@@ -77,7 +76,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		9572F59B27FEAC0C00239F9F /* DebuggingSceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebuggingSceneDelegate.swift; sourceTree = "<group>"; };
 		9572F59D27FEB75100239F9F /* SceneDelegateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegateTests.swift; sourceTree = "<group>"; };
 		9572F59F27FEBB8100239F9F /* FeedImageDataLoaderPresentationAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedImageDataLoaderPresentationAdapter.swift; sourceTree = "<group>"; };
 		9572F5A027FEBB8100239F9F /* FeedUIComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedUIComposer.swift; sourceTree = "<group>"; };
@@ -166,7 +164,6 @@
 			children = (
 				958068CF27F81FAF00DCA92A /* AppDelegate.swift */,
 				958068D127F81FAF00DCA92A /* SceneDelegate.swift */,
-				9572F59B27FEAC0C00239F9F /* DebuggingSceneDelegate.swift */,
 				9572F5A027FEBB8100239F9F /* FeedUIComposer.swift */,
 				9572F5A327FEBB8200239F9F /* MainQueueDispatchDecorator.swift */,
 				9572F5A227FEBB8100239F9F /* WeakRefVirtualProxy.swift */,
@@ -344,7 +341,6 @@
 				9572F5AA27FEBB8200239F9F /* FeedUIComposer.swift in Sources */,
 				9593F91227FC2D9800549054 /* FeedImageDataLoaderCacheDecorator.swift in Sources */,
 				9593F90827FC161500549054 /* FeedLoaderCacheDecorator.swift in Sources */,
-				9572F59C27FEAC0C00239F9F /* DebuggingSceneDelegate.swift in Sources */,
 				9572F5A627FEBB8200239F9F /* FeedViewAdapter.swift in Sources */,
 				958068D227F81FAF00DCA92A /* SceneDelegate.swift in Sources */,
 			);
