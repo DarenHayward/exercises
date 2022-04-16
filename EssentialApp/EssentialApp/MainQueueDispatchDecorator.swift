@@ -39,4 +39,3 @@ extension MainQueueDispatchDecorator: FeedImageDataLoader where T == FeedImageDa
         }
     }
 }
-

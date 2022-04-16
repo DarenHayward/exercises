@@ -5,6 +5,8 @@
 //  Created by Daren Hayward on 27/03/2022.
 //
 
+import Foundation
+
 public final class LocalFeedImageDataLoader {
     private let store: FeedImageDataStore
 
@@ -14,7 +16,7 @@ public final class LocalFeedImageDataLoader {
 }
 
 extension LocalFeedImageDataLoader: FeedImageDataCache {
-    public typealias SaveResult = Result<Void, Error>
+    public typealias SaveResult = FeedImageDataCache.Result
 
     public enum SaveError: Error {
         case failed
@@ -61,9 +63,12 @@ extension LocalFeedImageDataLoader: FeedImageDataLoader {
         let task = LoadImageDataTask(completion)
         store.retrieve(dataForURL: url) { [weak self] result in
             guard self != nil else { return }
+            
             task.complete(with: result
                 .mapError{ _ in LoadError.failed }
-                .flatMap { data in data.map { .success($0)} ?? .failure(LoadError.notFound) })
+                .flatMap { data in
+                    data.map { .success($0)} ?? .failure(LoadError.notFound)
+                })
         }
         return task
     }

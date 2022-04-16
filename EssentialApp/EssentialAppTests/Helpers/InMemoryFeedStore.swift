@@ -5,16 +5,19 @@
 //  Created by Daren Hayward on 08/04/2022.
 //
 
+import Foundation
 import EssentialFeed
 
-class InMemoryFeedStore: FeedStore, FeedImageDataStore {
+class InMemoryFeedStore {
     private(set) var feedCache: CachedFeed?
     private var feedImageDataCache: [URL: Data] = [:]
 
     private init(feedCache: CachedFeed? = nil) {
         self.feedCache = feedCache
     }
+}
 
+extension InMemoryFeedStore: FeedStore {
     func deleteCachedFeed(completion: @escaping FeedStore.DeletionCompletion) {
         feedCache = nil
         completion(.success(()))
@@ -28,16 +31,20 @@ class InMemoryFeedStore: FeedStore, FeedImageDataStore {
     func retrieve(completion: @escaping FeedStore.RetrievalCompletion) {
         completion(.success(feedCache))
     }
+}
 
+extension InMemoryFeedStore: FeedImageDataStore {
     func insert(_ data: Data, for url: URL, completion: @escaping (FeedImageDataStore.InsertionResult) -> Void) {
-        feedImageDataCache[url] = data;
+        feedImageDataCache[url] = data
         completion(.success(()))
     }
 
     func retrieve(dataForURL url: URL, completion: @escaping (FeedImageDataStore.RetrievalResult) -> Void) {
         completion(.success(feedImageDataCache[url]))
     }
+}
 
+extension InMemoryFeedStore {
     static var empty: InMemoryFeedStore {
         InMemoryFeedStore()
     }
@@ -50,4 +57,3 @@ class InMemoryFeedStore: FeedStore, FeedImageDataStore {
         InMemoryFeedStore(feedCache: CachedFeed(feed: [], timestamp: Date()))
     }
 }
-

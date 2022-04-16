@@ -10,6 +10,7 @@ import UIKit
 extension UIImageView {
     func setImageAnimated(_ newImage: UIImage?) {
         image = newImage
+
         guard newImage != nil else { return }
 
         alpha = 0

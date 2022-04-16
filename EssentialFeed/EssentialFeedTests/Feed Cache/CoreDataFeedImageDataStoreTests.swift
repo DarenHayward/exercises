@@ -10,13 +10,13 @@ import EssentialFeed
 
 class CoreDataFeedImageDataStoreTests: XCTestCase {
 
-    func test_reteiveImageData_deliversNotFoundWhenEmpty() {
+    func test_retrieveImageData_deliversNotFoundWhenEmpty() {
         let sut = makeSUT()
 
         expect(sut, toCompleteRetrievalWith: notFound(), for: anyURL())
     }
 
-    func test_retrieveImageData_deliversNotFoundWhenStoreDataURLDoesNotMatch() {
+    func test_retrieveImageData_deliversNotFoundWhenStoredDataURLDoesNotMatch() {
         let sut = makeSUT()
         let url = URL(string: "http://a-url.com")!
         let nonMatchingURL = URL(string: "http://another-url.com")!
@@ -53,7 +53,9 @@ class CoreDataFeedImageDataStoreTests: XCTestCase {
         let url = anyURL()
 
         let op1 = expectation(description: "Operation 1")
-        sut.insert([localImage(url: url)], timestamp: Date()) { _ in op1.fulfill() }
+        sut.insert([localImage(url: url)], timestamp: Date()) { _ in
+            op1.fulfill()
+        }
 
         let op2 = expectation(description: "Operation 2")
         sut.insert(anyData(), for: url) { _ in op2.fulfill() }
@@ -64,12 +66,12 @@ class CoreDataFeedImageDataStoreTests: XCTestCase {
         wait(for: [op1, op2, op3], timeout: 5.0, enforceOrder: true)
     }
 
-    // Helpers
+    // MARK: - Helpers
 
-    private func makeSUT() -> CoreDataFeedStore {
+    private func makeSUT(file: StaticString = #filePath, line: UInt = #line) -> CoreDataFeedStore {
         let storeURL = URL(fileURLWithPath: "/dev/null")
         let sut = try! CoreDataFeedStore(storeURL: storeURL)
-        trackForMemoryLeaks(sut)
+        trackForMemoryLeaks(sut, file: file, line: line)
         return sut
     }
 
@@ -91,12 +93,12 @@ class CoreDataFeedImageDataStoreTests: XCTestCase {
             switch (receivedResult, expectedResult) {
             case let (.success(receivedData), .success(expectedData)):
                 XCTAssertEqual(receivedData, expectedData, file: file, line:line)
+
             default:
                 XCTFail("Expected \(expectedResult), got \(receivedResult) instead", file: file, line: line)
             }
             exp.fulfill()
         }
-
         wait(for: [exp], timeout: 1.0)
     }
 
@@ -108,6 +110,7 @@ class CoreDataFeedImageDataStoreTests: XCTestCase {
             case let .failure(error):
                 XCTFail("Failed to save \(image) with error \(error)", file: file, line: line)
                 exp .fulfill()
+
             case .success:
                 sut.insert(data, for: url) { result in
                     if case let Result.failure(error) = result {
@@ -119,4 +122,5 @@ class CoreDataFeedImageDataStoreTests: XCTestCase {
         }
         wait(for: [exp], timeout: 1.0)
     }
+
 }

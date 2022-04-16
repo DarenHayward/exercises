@@ -5,6 +5,7 @@
 //  Created by Daren Hayward on 23/03/2022.
 //
 
+import Foundation
 import EssentialFeed
 
 class HTTPClientSpy: HTTPClient {

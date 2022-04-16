@@ -16,7 +16,7 @@ class CacheFeedImageDataUseCaseTests: XCTestCase {
         XCTAssertTrue(store.receivedMessages.isEmpty)
     }
 
-    func test_saveImageDataForURL_requestsImageInsertionforURL() {
+    func test_saveImageDataForURL_requestsImageDataInsertionForURL() {
         let (sut, store) = makeSUT()
         let url = anyURL()
         let data = anyData()
@@ -53,7 +53,7 @@ class CacheFeedImageDataUseCaseTests: XCTestCase {
         sut = nil
         store.completeInsertionSuccessfully()
 
-        XCTAssertTrue(received.isEmpty, "Expected not received results after instance has been deallocated")
+        XCTAssertTrue(received.isEmpty, "Expected no received results after instance has been deallocated")
     }
 
     // MARK: - Helpers
@@ -79,7 +79,7 @@ class CacheFeedImageDataUseCaseTests: XCTestCase {
                 break
 
             case let (.failure(receivedError as LocalFeedImageDataLoader.SaveError), .failure(expectedError as LocalFeedImageDataLoader.SaveError)):
-                XCTAssertEqual(receivedError, expectedError, "Expected \(expectedError)")
+                XCTAssertEqual(receivedError, expectedError, file: file, line: line)
 
             default:
                 XCTFail("Expected result \(expectedResult), got \(receivedResult) instead", file: file, line: line)
@@ -91,4 +91,5 @@ class CacheFeedImageDataUseCaseTests: XCTestCase {
         action()
         wait(for: [exp], timeout: 1.0)
     }
+    
 }

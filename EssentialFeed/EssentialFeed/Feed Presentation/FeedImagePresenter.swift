@@ -5,6 +5,8 @@
 //  Created by Daren Hayward on 20/03/2022.
 //
 
+import Foundation
+
 public protocol FeedImageView {
     associatedtype Image
 
@@ -18,7 +20,6 @@ public final class FeedImagePresenter<View: FeedImageView, Image> where View.Ima
     public init (view: View, imageTransformer: @escaping (Data) -> Image?) {
         self.view = view
         self.imageTransformer = imageTransformer
-
     }
 
     public func didStartLoadingImageData(for model: FeedImage) {
@@ -49,4 +50,3 @@ public final class FeedImagePresenter<View: FeedImageView, Image> where View.Ima
             shouldRetry: true))
     }
 }
-

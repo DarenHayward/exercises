@@ -10,7 +10,7 @@ import EssentialFeed
 
 class LoadFeedImageDataFromCacheUseCaseTests: XCTestCase {
 
-    func test_init_doesNotMessageStoreUponCompletion() {
+    func test_init_doesNotMessageStoreUponCreation() {
         let (_, store) = makeSUT()
 
         XCTAssertTrue(store.receivedMessages.isEmpty)
@@ -34,7 +34,7 @@ class LoadFeedImageDataFromCacheUseCaseTests: XCTestCase {
         })
     }
 
-    func test_loadImageDataFromURL_deliversNotFoundErrorNotFound() {
+    func test_loadImageDataFromURL_deliversNotFoundErrorOnNotFound() {
         let (sut, store) = makeSUT()
 
         expect(sut, toCompleteWith: notFound(), when: {
@@ -42,7 +42,7 @@ class LoadFeedImageDataFromCacheUseCaseTests: XCTestCase {
         })
     }
 
-    func test_loadImageDataFromURL_deliversStoreDataOnFoundData() {
+    func test_loadImageDataFromURL_deliversStoredDataOnFoundData() {
         let (sut, store) = makeSUT()
         let foundData = anyData()
 
@@ -103,17 +103,20 @@ class LoadFeedImageDataFromCacheUseCaseTests: XCTestCase {
         _ = sut.loadImageData(from: anyURL()) { receivedResult in
             switch (receivedResult, expectedResult) {
             case let (.success(receivedData), .success(expectedData)):
-                XCTAssertEqual(receivedData, expectedData)
+                XCTAssertEqual(receivedData, expectedData, file: file, line: line)
+
             case let (.failure(receivedError as LocalFeedImageDataLoader.LoadError),
                 .failure(expectedError as LocalFeedImageDataLoader.LoadError)):
                 XCTAssertEqual(receivedError, expectedError, file: file, line: line)
+
             default:
                 XCTFail("Expected result \(expectedResult), got \(receivedResult) instead", file: file, line: line)
             }
+
             exp.fulfill()
         }
-        action()
 
+        action()
         wait(for: [exp], timeout: 1.0)
     }
 
