@@ -5,6 +5,7 @@
 //  Created by Daren Hayward on 05/04/2022.
 //
 
+import Foundation
 import EssentialFeed
 
 class FeedImageDataLoaderSpy: FeedImageDataLoader {

@@ -18,4 +18,3 @@ class FeedLoaderStub: FeedLoader {
         completion(result)
     }
 }
-

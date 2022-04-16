@@ -102,4 +102,5 @@ class FeedImageDataLoaderWithFallbackCompositeTests: XCTestCase, FeedImageDataLo
         trackForMemoryLeaks(sut, file: file, line: line)
         return (sut, primaryLoader, fallbackLoader)
     }
+
 }

@@ -5,8 +5,10 @@
 //  Created by Daren Hayward on 05/04/2022.
 //
 
-public protocol FeedCache {
-    typealias SaveResult = Result<Void, Error>
+import Foundation
 
-    func save(_ feed: [FeedImage], completion: @escaping (SaveResult) -> Void)
+public protocol FeedCache {
+    typealias Result = Swift.Result<Void, Error>
+
+    func save(_ feed: [FeedImage], completion: @escaping (Result) -> Void)
 }

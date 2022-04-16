@@ -5,9 +5,10 @@
 //  Created by Daren Hayward on 05/04/2022.
 //
 
+import Foundation
 import EssentialFeed
 
-public class FeedImageDataLoaderCacheDecorator: FeedImageDataLoader {
+public final class FeedImageDataLoaderCacheDecorator: FeedImageDataLoader {
     private let decoratee: FeedImageDataLoader
     private let cache: FeedImageDataCache
 
@@ -26,7 +27,7 @@ public class FeedImageDataLoaderCacheDecorator: FeedImageDataLoader {
     }
 }
 
-extension FeedImageDataCache {
+private extension FeedImageDataCache {
     func saveIgnoringResult(_ data: Data, for url: URL) {
         save(data, for: url) { _ in }
     }

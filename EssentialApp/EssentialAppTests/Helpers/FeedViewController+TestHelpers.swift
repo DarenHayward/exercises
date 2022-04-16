@@ -30,17 +30,17 @@ extension FeedViewController {
     }
 
     func simulateFeedImageViewNearVisible(at row: Int) {
-        let dataStore = tableView.prefetchDataSource
+        let ds = tableView.prefetchDataSource
         let index = IndexPath(row: row, section: feedImagesSection)
-        dataStore?.tableView(tableView, prefetchRowsAt: [index])
+        ds?.tableView(tableView, prefetchRowsAt: [index])
     }
 
     func simulateFeedImageViewNotNearVisible(at row: Int) {
         simulateFeedImageViewNearVisible(at: row)
 
-        let dataStore = tableView.prefetchDataSource
+        let ds = tableView.prefetchDataSource
         let index = IndexPath(row: row, section: feedImagesSection)
-        dataStore?.tableView?(tableView, cancelPrefetchingForRowsAt: [index])
+        ds?.tableView?(tableView, cancelPrefetchingForRowsAt: [index])
     }
 
     func renderedFeedImageData(at index: Int) -> Data? {
@@ -63,13 +63,12 @@ extension FeedViewController {
         guard numberOfRenderedFeedImageViews() > row else {
             return nil
         }
-        let dataSource = tableView.dataSource
+        let ds = tableView.dataSource
         let index = IndexPath(row: row, section: feedImagesSection)
-        return dataSource?.tableView(tableView, cellForRowAt: index)
+        return ds?.tableView(tableView, cellForRowAt: index)
     }
 
     private var feedImagesSection: Int {
         return 0
     }
 }
-

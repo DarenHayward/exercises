@@ -55,8 +55,8 @@ class FeedImageDataLoaderCacheDecoratorTests: XCTestCase, FeedImageDataLoaderTes
 
     func test_loadImageData_cachesLoadedDataOnLoaderSuccess() {
         let cache = CacheSpy()
-        let imageData = anyData()
         let url = anyURL()
+        let imageData = anyData()
         let (sut, loader) = makeSUT(cache: cache)
 
         _ = sut.loadImageData(from: url) { _ in }
@@ -97,6 +97,5 @@ class FeedImageDataLoaderCacheDecoratorTests: XCTestCase, FeedImageDataLoaderTes
             messages.append(.save(data: data, for: url))
             completion(.success(()))
         }
-
     }
 }

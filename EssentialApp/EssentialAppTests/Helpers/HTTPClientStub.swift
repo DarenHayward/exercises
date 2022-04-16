@@ -5,6 +5,7 @@
 //  Created by Daren Hayward on 08/04/2022.
 //
 
+import Foundation
 import EssentialFeed
 
 class HTTPClientStub: HTTPClient {
@@ -22,7 +23,9 @@ class HTTPClientStub: HTTPClient {
         completion(stub(url))
         return Task()
     }
+}
 
+extension HTTPClientStub {
     static var offline: HTTPClientStub {
         HTTPClientStub(stub: { _ in .failure(NSError(domain: "offline", code: 0)) })
     }
@@ -31,4 +34,3 @@ class HTTPClientStub: HTTPClient {
         HTTPClientStub { url in .success(stub(url)) }
     }
 }
-

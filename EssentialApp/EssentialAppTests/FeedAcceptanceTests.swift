@@ -1,5 +1,5 @@
 //
-//  FeedAccpetanceTests.swift
+//  FeedAcceptanceTests.swift
 //  EssentialAppTests
 //
 //  Created by Daren Hayward on 07/04/2022.
@@ -10,7 +10,7 @@ import EssentialFeed
 import EssentialFeediOS
 @testable import EssentialApp
 
-class FeedAccpetanceTests: XCTestCase {
+class FeedAcceptanceTests: XCTestCase {
 
     func test_onLaunch_displaysRemoteFeedWhenCustomerHasConnectivity() {
         let feed = launch(httpClient: .online(response), store: .empty)
@@ -20,7 +20,7 @@ class FeedAccpetanceTests: XCTestCase {
         XCTAssertEqual(feed.renderedFeedImageData(at: 1), makeImageData())
     }
 
-    func test_onLaunch_displaysCachedFeedWhenCustomerHasNoConnectivity() {
+    func test_onLaunch_displaysCachedRemoteFeedWhenCustomerHasNoConnectivity() {
         let sharedStore = InMemoryFeedStore.empty
         let onlineFeed = launch(httpClient: .online(response), store: sharedStore)
         onlineFeed.simulateFeedImageViewVisible(at: 0)

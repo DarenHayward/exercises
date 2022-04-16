@@ -35,6 +35,7 @@ public class FeedImageDataLoaderWithFallbackComposite: FeedImageDataLoader {
             case .failure:
                 task.wrapped = self?.fallback.loadImageData(from: url, completion: completion)
             }
+
         }
         return task
     }

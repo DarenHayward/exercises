@@ -86,7 +86,7 @@ class EssentialFeedAPIEndToEndTests: XCTestCase {
 
     private func ephemeralClient(file: StaticString = #filePath, line: UInt = #line) -> HTTPClient {
         let client = URLSessionHTTPClient(session: URLSession(configuration: .ephemeral))
-        trackForMemoryLeaks(client)
+        trackForMemoryLeaks(client, file: file, line: line)
         return client
     }
     
