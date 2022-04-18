@@ -1,8 +1,5 @@
 //
-//  FeedSnapshotTests.swift
-//  EssentialFeediOSTests
-//
-//  Created by Daren Hayward on 08/04/2022.
+//  Copyright © 2019 Essential Developer. All rights reserved.
 //
 
 import XCTest

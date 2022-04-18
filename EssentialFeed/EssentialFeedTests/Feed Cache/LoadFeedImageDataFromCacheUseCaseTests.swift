@@ -1,8 +1,5 @@
 //
-//  LoadFeedImageDataFromCacheUseCaseTests.swift
-//  EssentialFeedTests
-//
-//  Created by Daren Hayward on 24/03/2022.
+//  Copyright © 2019 Essential Developer. All rights reserved.
 //
 
 import XCTest
@@ -81,7 +78,7 @@ class LoadFeedImageDataFromCacheUseCaseTests: XCTestCase {
 
     // MARK: - Helpers
 
-    private func makeSUT(file: StaticString = #filePath, line: UInt = #line) -> (sut: LocalFeedImageDataLoader, store: FeedImageDataStoreSpy) {
+    private func makeSUT(file: StaticString = #file, line: UInt = #line) -> (sut: LocalFeedImageDataLoader, store: FeedImageDataStoreSpy) {
         let store = FeedImageDataStoreSpy()
         let sut = LocalFeedImageDataLoader(store: store)
         trackForMemoryLeaks(store, file: file, line: line)
@@ -97,7 +94,7 @@ class LoadFeedImageDataFromCacheUseCaseTests: XCTestCase {
         return .failure(LocalFeedImageDataLoader.LoadError.notFound)
     }
 
-    private func expect(_ sut: LocalFeedImageDataLoader, toCompleteWith expectedResult: FeedImageDataLoader.Result, when action: () -> Void, file: StaticString = #filePath, line: UInt = #line) {
+    private func expect(_ sut: LocalFeedImageDataLoader, toCompleteWith expectedResult: FeedImageDataLoader.Result, when action: () -> Void, file: StaticString = #file, line: UInt = #line) {
         let exp = expectation(description: "Wait for load completion")
 
         _ = sut.loadImageData(from: anyURL()) { receivedResult in

@@ -1,8 +1,5 @@
 //
-//  CoreDataFeedStore+FeedStore.swift
-//  EssentialFeed
-//
-//  Created by Daren Hayward on 01/04/2022.
+//  Copyright © 2019 Essential Developer. All rights reserved.
 //
 
 import CoreData

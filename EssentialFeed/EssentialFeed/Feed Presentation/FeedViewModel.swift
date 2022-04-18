@@ -1,8 +1,5 @@
 //
-//  FeedViewModel.swift
-//  EssentialFeed
-//
-//  Created by Daren Hayward on 19/03/2022.
+//  Copyright © 2019 Essential Developer. All rights reserved.
 //
 
 public struct FeedViewModel {

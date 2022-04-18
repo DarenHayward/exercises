@@ -1,8 +1,5 @@
 //
-//  CombineHelpers.swift
-//  EssentialApp
-//
-//  Created by Daren Hayward on 18/04/2022.
+//  Copyright © 2020 Essential Developer. All rights reserved.
 //
 
 import Foundation

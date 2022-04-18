@@ -1,8 +1,5 @@
 //
-//  FeedStoreSpy.swift
-//  EssentialFeedTests
-//
-//  Created by Daren Hayward on 23/02/2022.
+//  Copyright © 2019 Essential Developer. All rights reserved.
 //
 
 import Foundation

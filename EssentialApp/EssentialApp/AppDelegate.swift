@@ -1,8 +1,5 @@
 //
-//  AppDelegate.swift
-//  EssentialApp
-//
-//  Created by Daren Hayward on 02/04/2022.
+//  Copyright © 2019 Essential Developer. All rights reserved.
 //
 
 import UIKit

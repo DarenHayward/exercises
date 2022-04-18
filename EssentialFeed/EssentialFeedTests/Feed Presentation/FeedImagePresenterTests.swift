@@ -1,8 +1,5 @@
 //
-//  FeeedImagePresenterTests.swift
-//  EssentialFeedTests
-//
-//  Created by Daren Hayward on 20/03/2022.
+//  Copyright © 2019 Essential Developer. All rights reserved.
 //
 
 import XCTest
@@ -60,7 +57,7 @@ class FeedImagePresenterTests: XCTestCase {
 
     private func makeSUT(
         imageTransformer: @escaping (Data) -> AnyImage? = { _ in nil },
-        file: StaticString = #filePath,
+        file: StaticString = #file,
         line: UInt = #line
     ) -> (sut: FeedImagePresenter<ViewSpy, AnyImage>, view: ViewSpy) {
         let view = ViewSpy()
@@ -76,7 +73,7 @@ class FeedImagePresenterTests: XCTestCase {
         hasTransformatedData: AnyImage?,
         isLoading: Bool,
         shouldRetry: Bool,
-        file: StaticString = #filePath,
+        file: StaticString = #file,
         line: UInt = #line
     ) {
         XCTAssertEqual(view.messages.count, 1, file: file, line: line)

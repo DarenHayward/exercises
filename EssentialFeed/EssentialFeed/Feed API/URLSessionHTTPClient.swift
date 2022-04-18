@@ -1,8 +1,5 @@
 //
-//  URLSessionHTTPClient.swift
-//  EssentialFeed
-//
-//  Created by Daren Hayward on 18/02/2022.
+//  Copyright © 2019 Essential Developer. All rights reserved.
 //
 
 import Foundation

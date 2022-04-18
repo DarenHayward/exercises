@@ -1,14 +1,11 @@
 //
-//  XCTestCase+Snapshot.swift
-//  EssentialFeediOSTests
-//
-//  Created by Daren Hayward on 10/04/2022.
+//  Copyright © 2019 Essential Developer. All rights reserved.
 //
 
 import XCTest
 
 extension XCTestCase {
-    func assert(snapshot: UIImage, named name: String, file: StaticString = #filePath, line: UInt = #line) {
+    func assert(snapshot: UIImage, named name: String, file: StaticString = #file, line: UInt = #line) {
         let snapshotURL = makeSnapshotURL(named: name, file: file)
         let snapshotData = makeSnapshotData(for: snapshot, file: file, line: line)
 
@@ -27,7 +24,7 @@ extension XCTestCase {
         }
     }
 
-    func record(snapshot: UIImage, named name: String, file: StaticString = #filePath, line: UInt = #line) {
+    func record(snapshot: UIImage, named name: String, file: StaticString = #file, line: UInt = #line) {
         let snapshotURL = makeSnapshotURL(named: name, file: file)
         let snapshotData = makeSnapshotData(for: snapshot, file: file, line: line)
 
@@ -50,7 +47,7 @@ extension XCTestCase {
             .appendingPathComponent("\(name).png")
     }
 
-    private func makeSnapshotData(for snapshot: UIImage, file: StaticString = #filePath, line: UInt = #line) -> Data? {
+    private func makeSnapshotData(for snapshot: UIImage, file: StaticString = #file, line: UInt = #line) -> Data? {
         guard let data = snapshot.pngData() else {
             XCTFail("Failed to generate PNG data representation from snapshot", file: file, line: line)
             return nil

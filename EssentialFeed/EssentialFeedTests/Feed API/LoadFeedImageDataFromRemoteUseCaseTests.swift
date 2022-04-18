@@ -1,8 +1,5 @@
 //
-//  LoadFeedImageDataFromRemoteUseCaseTests.swift
-//  EssentialFeedTests
-//
-//  Created by Daren Hayward on 22/03/2022.
+//  Copyright © 2019 Essential Developer. All rights reserved.
 //
 
 import XCTest
@@ -115,7 +112,7 @@ class LoadFeedImageDataFromRemoteUseCaseTests: XCTestCase {
 
     // MARK: - Helpers
 
-    private func makeSUT(file: StaticString = #filePath, line: UInt = #line) -> (sut: RemoteFeedImageDataLoader, client: HTTPClientSpy) {
+    private func makeSUT(file: StaticString = #file, line: UInt = #line) -> (sut: RemoteFeedImageDataLoader, client: HTTPClientSpy) {
         let client = HTTPClientSpy()
         let sut = RemoteFeedImageDataLoader(client: client)
         trackForMemoryLeaks(sut, file: file, line: line)

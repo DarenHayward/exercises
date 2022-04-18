@@ -1,8 +1,5 @@
 //
-//  SharedTestHelpers.swift
-//  EssentialAppTests
-//
-//  Created by Daren Hayward on 03/04/2022.
+//  Copyright © 2019 Essential Developer. All rights reserved.
 //
 
 import Foundation

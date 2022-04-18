@@ -1,8 +1,5 @@
 //
-//  FeedImage.swift
-//  EssentialFeed
-//
-//  Created by Daren Hayward on 12/02/2022.
+//  Copyright © 2018 Essential Developer. All rights reserved.
 //
 
 import Foundation

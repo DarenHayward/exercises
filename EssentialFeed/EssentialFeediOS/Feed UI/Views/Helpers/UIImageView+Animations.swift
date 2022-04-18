@@ -1,8 +1,5 @@
 //
-//  UIImageView+Animations.swift
-//  EssentialFeediOS
-//
-//  Created by Daren Hayward on 13/03/2022.
+//  Copyright © 2019 Essential Developer. All rights reserved.
 //
 
 import UIKit

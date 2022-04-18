@@ -1,8 +1,5 @@
 //
-//  CoreDataFeedStoreTests.swift
-//  EssentialFeedTests
-//
-//  Created by Daren Hayward on 28/02/2022.
+//  Copyright © 2019 Essential Developer. All rights reserved.
 //
 
 import XCTest
@@ -84,7 +81,7 @@ class CoreDataFeedStoreTests: XCTestCase, FeedStoreSpecs {
 
     // - MARK: Helpers
 
-    private func makeSUT(file: StaticString = #filePath, line: UInt = #line) -> FeedStore {
+    private func makeSUT(file: StaticString = #file, line: UInt = #line) -> FeedStore {
         let storeURL = URL(fileURLWithPath: "/dev/null")
         let sut = try! CoreDataFeedStore(storeURL: storeURL)
         trackForMemoryLeaks(sut, file: file, line: line)

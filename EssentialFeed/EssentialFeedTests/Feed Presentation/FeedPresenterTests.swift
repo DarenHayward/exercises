@@ -1,8 +1,5 @@
 //
-//  FeedPresenterTests.swift
-//  EssentialFeedTests
-//
-//  Created by Daren Hayward on 19/03/2022.
+//  Copyright © 2019 Essential Developer. All rights reserved.
 //
 
 import XCTest
@@ -58,7 +55,7 @@ class FeedPresenterTests: XCTestCase {
         return (sut, view)
     }
 
-    func localized(_ key: String, file: StaticString = #filePath, line: UInt = #line) -> String {
+    func localized(_ key: String, file: StaticString = #file, line: UInt = #line) -> String {
         let table = "Feed"
         let bundle = Bundle(for: FeedPresenter.self)
         let value = bundle.localizedString(forKey: key, value: nil, table: table)

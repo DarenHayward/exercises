@@ -1,8 +1,5 @@
 //
-//  UITableView+HeaderSizing.swift
-//  EssentialFeediOS
-//
-//  Created by Daren Hayward on 10/04/2022.
+//  Copyright © 2019 Essential Developer. All rights reserved.
 //
 
 import UIKit

@@ -1,8 +1,5 @@
 //
-//  RemoteFeedLoader.swift
-//  EssentialFeed
-//
-//  Created by Daren Hayward on 13/02/2022.
+//  Copyright © 2018 Essential Developer. All rights reserved.
 //
 
 import Foundation

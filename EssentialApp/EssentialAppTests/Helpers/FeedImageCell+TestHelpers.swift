@@ -1,8 +1,5 @@
 //
-//  FeedImageCell+TestHelper.swift
-//  EssentialFeediOSTests
-//
-//  Created by Daren Hayward on 10/03/2022.
+//  Copyright © 2019 Essential Developer. All rights reserved.
 //
 
 import UIKit
