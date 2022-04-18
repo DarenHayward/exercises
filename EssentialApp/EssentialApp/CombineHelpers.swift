@@ -75,7 +75,6 @@ extension Publisher {
 }
 
 extension DispatchQueue {
-
     static var immediateWhenOnMainQueueScheduler: ImmediateWhenOnMainQueueScheduler {
         ImmediateWhenOnMainQueueScheduler()
     }
