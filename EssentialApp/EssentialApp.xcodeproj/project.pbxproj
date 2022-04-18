@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9563414E280D9A6C000B8A6B /* CombineHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9563414D280D9A6C000B8A6B /* CombineHelpers.swift */; };
 		956594D828000FB2005FA688 /* HTTPClientStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956594D728000FB2005FA688 /* HTTPClientStub.swift */; };
 		956594DA28001082005FA688 /* InMemoryFeedStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956594D928001082005FA688 /* InMemoryFeedStore.swift */; };
 		9572F59E27FEB75100239F9F /* SceneDelegateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9572F59D27FEB75100239F9F /* SceneDelegateTests.swift */; };
@@ -65,6 +66,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		9563414D280D9A6C000B8A6B /* CombineHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineHelpers.swift; sourceTree = "<group>"; };
 		956594D728000FB2005FA688 /* HTTPClientStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClientStub.swift; sourceTree = "<group>"; };
 		956594D928001082005FA688 /* InMemoryFeedStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InMemoryFeedStore.swift; sourceTree = "<group>"; };
 		9572F59D27FEB75100239F9F /* SceneDelegateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegateTests.swift; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 				958068D827F81FB000DCA92A /* Assets.xcassets */,
 				958068DA27F81FB000DCA92A /* LaunchScreen.storyboard */,
 				958068DD27F81FB000DCA92A /* Info.plist */,
+				9563414D280D9A6C000B8A6B /* CombineHelpers.swift */,
 			);
 			path = EssentialApp;
 			sourceTree = "<group>";
@@ -304,6 +307,7 @@
 				9572F5AA27FEBB8200239F9F /* FeedUIComposer.swift in Sources */,
 				9572F5A627FEBB8200239F9F /* FeedViewAdapter.swift in Sources */,
 				958068D227F81FAF00DCA92A /* SceneDelegate.swift in Sources */,
+				9563414E280D9A6C000B8A6B /* CombineHelpers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
